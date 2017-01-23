@@ -20,16 +20,21 @@ layout
 modules
 -- _button.scss
 -- _form.scss
--- _links.scss
 
 pages
 -- _home.scss
 
 main.scss
-style.css
 
 CSS information
 - Normalize used.
 - REMs used for font units
 - BEM naming convention to be used
+
+
+Themes bits and bobs
+- Main Navigation Area
+- Footer Navigation Area
+- Widget area in sidebar
+- JQuery to load from Google CDN
 
