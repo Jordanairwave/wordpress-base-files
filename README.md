@@ -30,5 +30,5 @@ style.css
 
 CSS information
 - Normalize used.
-- Ems used for font units
+- REMs used for font units
 
