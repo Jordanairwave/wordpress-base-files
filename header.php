@@ -45,3 +45,9 @@
 	</script>
 </head>
 <body>
+	<div id="page-wrap">
+		<header id="header">
+			<nav id="main-nav">
+			
+			</nav>
+		</header>
