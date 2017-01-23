@@ -31,4 +31,5 @@ style.css
 CSS information
 - Normalize used.
 - REMs used for font units
+- BEM naming convention to be used
 
