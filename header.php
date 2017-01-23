@@ -1,16 +1,12 @@
-<?php
-	$pageTitle = 'Title Here';
-	$pageDescription = 'Page description here';
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<title><?php echo $pageTitle; ?></title>
+	<title><?php get_header(); ?></title>
 	<meta charset="utf-8">
-	<meta name="description" content="<?php echo $pageDescription; ?>" />
+	<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link href="css/style.css?v=1.0" rel="stylesheet" type="text/css" />
@@ -26,16 +22,16 @@
 	<!-- Facebook -->
 	<meta property=”og:title” content=<?php echo $pageTitle; ?>>
 	<meta property=”og:type” content=”website”>
-	<meta property=”og:image” content=<?php echo "http://$_SERVER[HTTP_HOST]/social.png"; ?>>
-	<meta property=”og:url” content=<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>>
+	<meta property=”og:image” content=<?php echo bloginfo( 'wpurl' ) . "/social.png"; ?>>
+	<meta property=”og:url” content=<?php echo get_permalink( $post->ID ); ?>>
 	<meta property=”og:description” content=<?php echo $pageDescription; ?>>
 	
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content=<?php echo $pageTitle; ?>>
 	<meta name="twitter:description" content=<?php echo $pageDescription; ?>>
-	<meta name="twitter:image:src" content=<?php echo "http://$_SERVER[HTTP_HOST]/social.png"; ?>>	
-	<meta name="twitter:url" content=<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>>
+	<meta name="twitter:image:src" content=<?php echo bloginfo( 'wpurl' ) . "/social.png"; ?>>	
+	<meta name="twitter:url" content=<?php echo get_permalink( $post->ID ); ?>>
 	
 	<script>
 	  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
