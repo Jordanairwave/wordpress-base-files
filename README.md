@@ -1,7 +1,7 @@
 # wordpress-base-files
 Wordpress base files to use in my projects
 
-SASS Used and broken up in to modules
+SASS Used and broken up in to modules, to be complied with Codekit with Gulp backup
 Base
 -- _fonts.scss
 -- _reset.scss
@@ -33,8 +33,13 @@ CSS information
 
 
 Themes bits and bobs
+- SPEED IS IMPORTANT
+- Security is important
 - Main Navigation Area
 - Footer Navigation Area
 - Widget area in sidebar
 - JQuery to load from Google CDN
+- version numbers after files to be removed to allow for caching
+- Secure htaccess file to be included with theme
+- Secure wp-config txt file to be include as well.
 
