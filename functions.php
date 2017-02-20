@@ -70,6 +70,11 @@ function blank_add_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'blank_add_scripts' );
+
+//* Add support for thumbnails
+add_theme_support('post-thumbnails');
+//add_image_size( 'twentyseventeen-featured-image', 2000, 1200, true );
+//add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
  
  
  ?>
