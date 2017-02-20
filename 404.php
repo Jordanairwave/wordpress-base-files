@@ -1,8 +1,9 @@
 <?php
 /**
+ * Base Wordpress Theme 404 Page
  *
  * @package WordPress
- * @subpackage blank starter
+ * @subpackage Base Wordpress Theme
  * @since 1.0
  * @version 1.0
  */
