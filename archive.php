@@ -12,7 +12,7 @@
 
 <?php get_header(); ?>
 
-	<div class="grid-container">
+	<div id="page-wrap">
 
 		<article>
 		<?php

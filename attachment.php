@@ -11,7 +11,7 @@
 
 <?php get_header(); ?>
 
-	<div class="grid-container">
+	<div id="page-wrap">
 
 		<article>
 		<?php echo wp_get_attachment_image( get_the_ID(), 'large' ); ?>
