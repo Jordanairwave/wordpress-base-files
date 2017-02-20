@@ -1,0 +1,144 @@
+/* =========================================================
+Comments list styling
+ ========================================================= */
+#comments {
+	/* =========================================================
+	Comments list
+	========================================================= */
+	ol.comment-list {
+	
+		list-style:none; 
+		margin:0 0 10px 0; 
+		padding:0; 
+		text-indent:0;
+	
+	
+	
+	li.comment {
+		border-bottom: 1px solid $grey_dark; 
+		padding: 15px;
+		
+		.comment-body {
+			overflow: hidden;
+		}
+	
+		
+		div.vcard {
+	
+			font-weight: bold;
+	
+			 img.avatar {
+			 	border:5px solid $grey_darker; 
+			 	float:right; 
+			 	margin:0 0 20px 20px;
+			 } // end .avatar
+	
+		} // end .vcard
+
+		div.comment-meta {
+	
+			font-size: 11px;
+	
+				a {
+					color: $grey_darker;
+				} // end a
+	
+		} // end div.comment-meta
+	
+		p {font-size: 1rem;} // end p
+	
+		ul {
+			font-size: 1rem;
+			list-style: none;
+			margin: 0 0 0 20px;
+		} // end ul
+	
+		div.reply {
+	
+			font-size: 1rem;
+	
+			a {font-weight: bold;} // end a
+	
+		} // end reply
+	
+		 ol.children {
+			list-style:none; 
+			margin: 12px; 
+			text-indent:0;
+	
+			li.depth-2 { border-left: 5px solid $grey_dark; margin:0 0 10px 10px; }
+			li.depth-3 { border-left: 5px solid $grey_dark; margin:0 0 10px 10px; }
+			li.depth-4 { border-left: 5px solid $grey_dark; margin:0 0 10px 10px; }
+	
+	
+		} // end ul.children
+	
+	} // end li.comment
+	
+	li.even {background:$white;}
+	li.odd {background:$grey;}
+	li.parent {border-left:5px solid $grey_dark;}
+	
+	}// end commentlist
+	
+	/* =========================================================
+	Comments form
+	========================================================= */
+	#respond { 
+	
+		background: $grey_dark;
+		padding: 10px;
+		box-sizing: border-box;
+		
+		/* Highlight active form field */
+		input[type=text],
+		textarea {
+			-webkit-transition: all 0.30s ease-in-out;
+			-moz-transition: all 0.30s ease-in-out;
+			-ms-transition: all 0.30s ease-in-out;
+			-o-transition: all 0.30s ease-in-out;
+			outline: none;
+			padding: 3px 0px 3px 3px;
+			margin: 5px 1px 3px 0px;
+			border: none;		
+		}
+		
+		input[type=text]:focus, 
+		textarea:focus {
+			box-shadow: 0 0 5px $blue_highlight;
+			margin: 5px 1px 3px 0px;
+			border: 1px solid $blue_highlight;
+		}
+	}
+	
+	#commentform {
+		input,
+		label,
+		textarea {
+			display: block;
+			width: 100%;
+			box-sizing: border-box;
+			resize: none;
+		}
+		
+		.form-submit {
+			display: inline-block;
+		}
+		
+		#submit {
+			display: inline-block;
+			border: none;
+			color: $white;
+			background-color: $black;
+			border-radius: 5px;
+			padding: 10px;
+		}
+		
+		#submit:hover {
+			color: $white;
+			background-color: $grey_darker;			
+		}
+		
+	}//End Comment form styling
+
+} //End Comments

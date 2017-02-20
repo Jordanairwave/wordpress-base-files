@@ -7,3 +7,11 @@ article, aside, details, figure, footer, header, hgroup, nav, section {
 }
 
 img { max-width: 100%; }
+
+/* main content header and section over hidden to stop floats breaking out */
+#main-content {
+	header,
+	section {
+		overflow: hidden;
+	}
+}
