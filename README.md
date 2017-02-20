@@ -1,12 +1,13 @@
 # wordpress-base-files
 Wordpress base files to use in my projects
 
-SASS Used and broken up in to modules, to be complied with Codekit with Gulp backup
+SASS Used and broken up in to modules
 Base
 -- _fonts.scss
 -- _reset.scss
 
 helpers
+-- _colours.scss
 -- _functions.scss
 -- _general.scss
 -- _mixins.scss
@@ -18,8 +19,10 @@ layout
 -- _header.scss
 
 modules
+-- _animation.scss
 -- _button.scss
 -- _form.scss
+-- _comments.scss
 
 pages
 -- _home.scss
@@ -27,19 +30,14 @@ pages
 main.scss
 
 CSS information
-- Normalize used.
+- CSS Reset used.
 - REMs used for font units
 - BEM naming convention to be used
 
 
 Themes bits and bobs
-- SPEED IS IMPORTANT
-- Security is important
 - Main Navigation Area
 - Footer Navigation Area
 - Widget area in sidebar
 - JQuery to load from Google CDN
-- version numbers after files to be removed to allow for caching
-- Secure htaccess file to be included with theme
-- Secure wp-config txt file to be include as well.
 
