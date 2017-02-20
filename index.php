@@ -14,7 +14,7 @@
 
 	<div id="page-wrap">
 
-		<div class="grid-<?php echo $col; ?>">
+		<article>
 		<?php
 		if ( have_posts() ) : 
 			while ( have_posts() ) : the_post();
@@ -24,7 +24,7 @@
 			get_template_part( 'template-parts/post/content', 'none' );
 		endif;	
 		?>
-		</div>
+		</article>
 
 		<?php get_sidebar(); ?>
 
