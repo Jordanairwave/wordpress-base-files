@@ -1,48 +1,64 @@
+<?php
+/**
+ * Displays header
+ *
+ * @package WordPress
+ * @subpackage Base Wordpress Theme
+ * @since 1.0
+ * @version 1.0
+ */
+?>
+
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html <?php language_attributes(); ?>>
 <head>
-	<title><?php get_header(); ?></title>
-	<meta charset="utf-8">
+	<title><?php bloginfo('name') . wp_title('-'); ?></title>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="apple-touch-icon" href="apple-touch-icon.png" />
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
-	
-	<! -- Geo Location - http://www.geo-tag.de/generator/en.html-->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+	<!-- Geo Location - http://www.geo-tag.de/generator/en.html-->
 	<meta name="geo.region" content="GB-OXF" />
 	<meta name="geo.placename" content="oxford" />
 	<meta name="geo.position" content="55.378051;-3.435973" />
 	<meta name="ICBM" content="55.378051, -3.435973" />
 
 	<!-- Facebook -->
-	<meta property=”og:title” content=<?php echo $pageTitle; ?>>
+	<meta property=”og:title” content=<?php bloginfo('name') . wp_title('-'); ?>>
 	<meta property=”og:type” content=”website”>
 	<meta property=”og:image” content=<?php echo bloginfo( 'wpurl' ) . "/social.png"; ?>>
 	<meta property=”og:url” content=<?php echo get_permalink( $post->ID ); ?>>
-	<meta property=”og:description” content=<?php echo $pageDescription; ?>>
-	
+	<meta property=”og:description” content=<?php bloginfo( 'description' ); ?>>
+
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content=<?php echo $pageTitle; ?>>
-	<meta name="twitter:description" content=<?php echo $pageDescription; ?>>
-	<meta name="twitter:image:src" content=<?php echo bloginfo( 'wpurl' ) . "/social.png"; ?>>	
+	<meta name="twitter:title" content=<?php bloginfo('name') . wp_title('-'); ?>>
+	<meta name="twitter:description" content=<?php bloginfo( 'description' ); ?>>
+	<meta name="twitter:image:src" content=<?php echo bloginfo( 'wpurl' ) . "/social.png"; ?>>
 	<meta name="twitter:url" content=<?php echo get_permalink( $post->ID ); ?>>
 	
-	<script>
-	  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-	  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-	  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-	  s.parentNode.insertBefore(g,s)}(document,'script'));
-	</script>
+	<?php wp_head(); ?>
+
 </head>
-<body>
-	<div id="page-wrap">
-		<header id="header">
-			<nav id="main-nav">
-			
-			</nav>
-		</header>
+
+<body <?php body_class(); ?>>
+
+	<header>
+		<section>
+
+			<h1><a href="<?php echo get_home_url(); ?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
+
+
+			<?php if ( has_nav_menu( 'header-menu' ) ) : ?>
+				<!--<nav>
+					<?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'container_class' => 'header-menu' ) ); ?>
+				</nav>-->
+				<?php get_template_part( 'template-parts/navigation/main'); ?>
+			<?php endif; ?>
+
+
+		</section>
+    </header>
