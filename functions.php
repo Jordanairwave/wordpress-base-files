@@ -54,6 +54,12 @@ function blank_add_sidebar() {
     ) );
 }
 add_action( 'widgets_init', 'blank_add_sidebar' );
+
+//* Add CSS
+function blank_add_styles() {
+	wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main-min.css' );
+}
+add_action( 'wp_enqueue_scripts', 'blank_add_styles' );
  
  
  ?>
