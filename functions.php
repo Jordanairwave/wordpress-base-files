@@ -30,6 +30,17 @@ add_theme_support( 'html5', array(
 	'gallery',
 	'caption',
 ) );
+
+//* Register menus
+function f3_add_menus() {
+  register_nav_menus(
+    array(
+      'header-menu' => __( 'Header menu' ),
+      'footer-menu' => __( 'Footer menu' )
+    )
+  );
+}
+add_action( 'init', 'f3_add_menus' );
  
  
  ?>
