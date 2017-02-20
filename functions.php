@@ -9,7 +9,7 @@
  */
 
 //* Making jQuery to load from Google Library
-function f3_replace_jquery() {
+function blank_replace_jquery() {
 	if (!is_admin()) {
 		// comment out the next two lines to load the local copy of jQuery
 		wp_deregister_script('jquery');
@@ -17,7 +17,7 @@ function f3_replace_jquery() {
 		wp_enqueue_script('jquery');
 	}
 }
-add_action('init', 'f3_replace_jquery');
+add_action('init', 'blank_replace_jquery');
 
 /*
  * Switch default core markup for search form, comment form, and comments
@@ -32,7 +32,7 @@ add_theme_support( 'html5', array(
 ) );
 
 //* Register menus
-function f3_add_menus() {
+function blank_add_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header menu' ),
@@ -40,7 +40,20 @@ function f3_add_menus() {
     )
   );
 }
-add_action( 'init', 'f3_add_menus' );
+add_action( 'init', 'blank_add_menus' );
+
+//* Register sidebar
+function blank_add_sidebar() {
+    register_sidebar( array(
+        'name'          => __('Primary Sidebar'),
+        'id'            => 'sidebar',
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h1 class="widget-title">',
+        'after_title'   => '</h1>',
+    ) );
+}
+add_action( 'widgets_init', 'blank_add_sidebar' );
  
  
  ?>
