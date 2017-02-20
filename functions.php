@@ -88,6 +88,14 @@ add_filter( 'post_thumbnail_html', 'remove_image_size_attributes' );
 
 // Remove image size attributes from images added to a WordPress post
 add_filter( 'image_send_to_editor', 'remove_image_size_attributes' );
+
+//Remove query strings from static resources
+function blank_remove_script_version( $src ){
+    $parts = explode( '?ver', $src );
+        return $parts[0];
+}
+add_filter( 'script_loader_src', 'blank_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', 'blank_remove_script_version', 15, 1 );
  
  
  ?>
