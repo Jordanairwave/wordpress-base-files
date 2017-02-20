@@ -133,6 +133,14 @@ function blank_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'blank_post_thumbnail_sizes_attr', 10, 3 );
+
+/*function to add defer to all scripts*/
+function js_async_attr($tag){
+
+	# Add async to all remaining scripts
+	return str_replace( ' src', ' defer="defer" src', $tag );
+}
+add_filter( 'script_loader_tag', 'js_async_attr', 10 );
  
  
  ?>
