@@ -41,3 +41,4 @@ Themes bits and bobs
 - Widget area in sidebar
 - JQuery to load from Google CDN
 
+Codekit to be used to complile CSS and JS, The codekit file can befound in the repo
