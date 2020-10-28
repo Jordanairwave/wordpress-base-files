@@ -10,8 +10,20 @@
 // 	transition: $what $time $how;
 // }
 
+//@include font-size(16px);
+
+@function calculate-rem($size) {
+	$remSize: ($size / 16px);
+	@return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size; //fallback in px
+	font-size: calculate-rem($size);
+}
 
 // =============================================================================
+//	@include fluid-type(font-size, $min_width, $max_width, 30px, 40px);
 //
 //  PRECISE CONTROL OVER RESPONSIVE TYPOGRAPHY FOR SASS
 //  ---------------------------------------------------
