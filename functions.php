@@ -22,6 +22,10 @@ add_theme_support( 'html5', array(
 
 add_theme_support( 'woocommerce' );
 
+function woocommerce_activate_lightbox() {
+  add_theme_support( 'wc-product-gallery-lightbox' );
+}
+
 //* Register menus
 function blank_add_menus() {
   register_nav_menus(
