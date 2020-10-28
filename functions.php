@@ -178,13 +178,28 @@ function blank_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 }
 add_filter( 'wp_get_attachment_image_attributes', 'blank_post_thumbnail_sizes_attr', 10, 3 );
 
-/*function to add defer to all scripts*/
-function js_async_attr($tag){
+ /**
+ * Remove admin bar from frontend
+ */
+add_filter('show_admin_bar', '__return_false');
 
-	# Add async to all remaining scripts
-	return str_replace( ' src', ' defer="defer" src', $tag );
-}
-add_filter( 'script_loader_tag', 'js_async_attr', 10 );
- 
+/**
+ * Restrict Dashboard to admins Only (Uncomment if needed)
+ */
+// add_action( 'init', 'blockusers_init' );
+// function blockusers_init() {
+// 	if ( is_admin() && ! current_user_can( 'administrator' ) && ! ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
+// 		wp_redirect( home_url() );
+// 		exit;
+// 	}
+// }
+
+/**
+ * Gravity Forms CSS spinner (Uncomment if needed) - https://mattrad.uk/gravity-forms-css-spinner/
+ */
+// function gf_spinner_replace( $image_src, $form ) {
+// 	return  'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // relative to you theme images folder
+// }
+// add_filter( 'gform_ajax_spinner_url', 'gf_spinner_replace', 10, 2 );
  
  ?>
