@@ -20,6 +20,8 @@ add_theme_support( 'html5', array(
 	'caption',
 ) );
 
+add_theme_support( 'woocommerce' );
+
 //* Register menus
 function blank_add_menus() {
   register_nav_menus(
@@ -30,6 +32,39 @@ function blank_add_menus() {
   );
 }
 add_action( 'init', 'blank_add_menus' );
+
+/*
+ * Custom Post Type
+ */
+// function custom_post_component() {
+// 	$labels = array(
+// 		'name'               => _x( 'Components', 'post type general name' ),
+// 		'singular_name'      => _x( 'Component', 'post type singular name' ),
+// 		'add_new'            => _x( 'Add New', 'component' ),
+// 		'add_new_item'       => __( 'Add New Component' ),
+// 		'edit_item'          => __( 'Edit Component' ),
+// 		'new_item'           => __( 'New Component' ),
+// 		'all_items'          => __( 'All Components' ),
+// 		'view_item'          => __( 'View Component' ),
+// 		'search_items'       => __( 'Search Components' ),
+// 		'not_found'          => __( 'No components found' ),
+// 		'not_found_in_trash' => __( 'No components found in the Trash' ), 
+// 		'parent_item_colon'  => '',
+// 		'menu_name'          => 'Components'
+// 	);
+// 	$args = array(
+// 		'labels'        => $labels,
+// 		'description'   => 'Holds our components and component specific data',
+// 		'public'        => true,
+// 		'publicly_queryable'  => false,
+// 		'menu_position' => 14,
+// 		'menu_icon' => 'dashicons-hammer',
+// 		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'revisions' ),
+// 		'has_archive'   => false,
+// 	);
+// 	register_post_type( 'component', $args );	
+// }
+// add_action( 'init', 'custom_post_component' );
 
 //* Register sidebar
 function blank_add_sidebar() {
