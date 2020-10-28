@@ -44,6 +44,26 @@ function blank_add_sidebar() {
 }
 add_action( 'widgets_init', 'blank_add_sidebar' );
 
+/*--------------------------------------------------------------------------------
+	Remove Guttenburg editor from Post and Pages - To be replaced with ACF fields
+---------------------------------------------------------------------------------*/
+add_action( 'init', function() {
+	remove_post_type_support( 'post', 'editor' );
+	remove_post_type_support( 'page', 'editor' );
+}, 9);
+
+// Fully Disable Gutenberg editor.
+add_filter('use_block_editor_for_post_type', '__return_false', 10);
+
+//Remove Gutenberg Block Library CSS from loading on the frontend
+function gutenberg_remove_wp_block_library_css(){
+	wp_dequeue_style( 'wp-block-library' ); // WordPress core
+	wp_dequeue_style( 'wp-block-library-theme' ); // WordPress core
+	wp_dequeue_style( 'wc-block-style' ); // WooCommerce
+	wp_dequeue_style( 'storefront-gutenberg-blocks' ); // Storefront theme
+}
+add_action( 'wp_enqueue_scripts', 'gutenberg_remove_wp_block_library_css', 100 );
+
 //* Add CSS
 function blank_add_styles() {
 	wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main-min.css' );
