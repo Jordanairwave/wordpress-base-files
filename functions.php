@@ -26,6 +26,11 @@ function woocommerce_activate_lightbox() {
   add_theme_support( 'wc-product-gallery-lightbox' );
 }
 
+/*--------------------------------------------------------------------------------
+	Remove big image size threshold of 2560px -if using cloudinary or another service
+---------------------------------------------------------------------------------*/
+add_filter( 'big_image_size_threshold', '__return_false' );
+
 //* Register menus
 function blank_add_menus() {
   register_nav_menus(
